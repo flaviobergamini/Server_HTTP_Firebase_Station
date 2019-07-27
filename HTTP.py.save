@@ -27,23 +27,7 @@ class S(BaseHTTPRequestHandler):
         content_length = int(self.headers['Content-Length']) # <--- Gets the size of data
         post_data = self.rfile.read(content_length) # <--- Gets the data itself
         print(post_data) # <-- Print post data
-#	result = firebase.post('/umidadeM', '31.23333')
-	if post_data == '1':
-		while post_data == '1':
-			post_data = self.rfile.read(content_lenght)
-			time.sleep(0.5)
-		send = firebase.post('/umidadeM',post_data) 
-	elif post_data == '2':
-		while post_data == '2':
-			post_data = self.rfile.read(content_lenght)
-			time.sleep(0.5)
-		send = firebase.post('/acidezM', post_data)
- 	elif post_data == '3':
-		while post_data == '3':
-			post_data = self.rfile.read(content_lenght)
-			time.sleep(0.5)
-		send = firebase.post('/tempM',post_data)
-# or post_data == 'acidezM' or post_data == 'umidade' or post_data == 'temp' or post_data == 'pluviometro' or post_data == 'acidez':
+	if(post_data == 'umidadeM' or post_data == 'tempM' or 'pluviometroM' or post_
         self._set_headers()
         self.wfile.write("<html><body><h1>POST!</h1></body></html>")
         
